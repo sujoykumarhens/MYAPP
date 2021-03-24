@@ -4,6 +4,8 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Signin from './components/signin';
 import Dashboard from './components/dashboard';
+import Books from './components/books';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +20,8 @@ function App() {
       <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/Signin' component={Signin}/>
-      <Route path='/Dashboard' component={Dashboard}/>  
+      <Route path='/Dashboard' component={Dashboard}/> 
+      <Route path='/Books' component={Books}/> 
       </Switch>
       <Footer/>
     </Router>
