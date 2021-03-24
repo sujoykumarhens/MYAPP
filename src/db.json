@@ -1,0 +1,32 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "user_name": "A",
+        "email": "johndoe@abc.com",
+        "gender": "Male",
+        "password": "A123"
+      },
+      {
+        "id": 2,
+        "user_name": "B",
+        "email": "johndoe@abc.com",
+        "gender": "Male",
+        "password": "B123"
+      },
+      {
+        "id": 3,
+        "user_name": "C",
+        "email": "johndoe@abc.com",
+        "gender": "Male",
+        "password": "C123"
+      },
+      {
+        "id": 4,
+        "user_name": "D",
+        "email": "johndoe@abc.com",
+        "gender": "Female",
+        "password": "D123"
+      }
+    ]
+  }
