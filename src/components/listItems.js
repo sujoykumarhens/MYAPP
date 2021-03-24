@@ -1,13 +1,16 @@
 import React from 'react';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-
+import LogOut from '@material-ui/icons/ExitToApp';
+import MenuBookOutlinedIcon from '@material-ui/icons/MenuBookOutlined';
+import DateRangeRoundedIcon from '@material-ui/icons/DateRangeRounded';
+import AccountBalanceWalletRoundedIcon from '@material-ui/icons/AccountBalanceWalletRounded';
+import PersonRoundedIcon from '@material-ui/icons/PersonRounded';
+import {BrowserRouter as Router,Link} from "react-router-dom";
 export const mainListItems = (
   <div>
     <ListItem button>
@@ -18,27 +21,38 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <MenuBookOutlinedIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Books" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <DateRangeRoundedIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Lend Book" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <AccountBalanceWalletRoundedIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Wallet" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <PersonRoundedIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Profile" />
     </ListItem>
+    <Divider />
+    <List component="nav"  aria-label="secondary">
+      <Link to='/Signin' style={{textDecoration:'none', color:'black',}}>
+        <ListItem button  style={{ color: '#d32f2f' }}>
+          <ListItemIcon>
+            <LogOut style={{ color: '#d32f2f' }}/>
+          </ListItemIcon>
+          <ListItemText primary="Log out" />
+        </ListItem>
+      </Link>
+    </List>
   </div>
 );

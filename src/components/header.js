@@ -8,7 +8,8 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-import LocalLibraryRoundedIcon from '@material-ui/icons/LocalLibraryRounded'; import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LocalLibraryRoundedIcon from '@material-ui/icons/LocalLibraryRounded'; 
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const UseStyle = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -25,17 +26,26 @@ const UseStyle = makeStyles((theme) => ({
     textDecoration: 'none',
   }
 }));
+const token = window.localStorage.getItem("token")
+  if (token == 'jjj') {
+    alert(token);
+  }
+
 
 export default function ButtonAppBar() {
   const classes = UseStyle();
+
+  
+
+
 
   return (
     <div>
       <AppBar position="static" className={classes.AppBar}>
         <Toolbar>
           <Typography variant="h5" className={classes.title} >
-          <Link to='/'  className={classes.titleLink}>
-            <LocalLibraryRoundedIcon /> e-Library
+            <Link to='/' className={classes.titleLink}>
+              <LocalLibraryRoundedIcon /> e-Library
             </Link>
           </Typography>
           <Link to='/signin' className={classes.Button}>

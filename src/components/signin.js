@@ -14,8 +14,14 @@ import {
   } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  body: {
+    background: '#ADA996',  /* fallback for old browsers */
+        background: '-webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996)',  /* Chrome 10-25, Safari 5.1-6 */
+        background: 'linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  },
   paper: {
-    marginTop: theme.spacing(8),
+    padding: '140px 0px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -37,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
 }));
-async function loginUser(credentials) {
+/*async function loginUser(credentials) {
   return fetch('http://localhost:8000/users', {
     method: 'POST',
     headers: {
@@ -47,7 +53,7 @@ async function loginUser(credentials) {
   })
     .then(data => data.json())
  }
-
+*/
 export default function SignIn(props) {
   const classes = useStyles();
   const [emailInput, setEmailInput] = useState('');
@@ -70,21 +76,17 @@ const handleLoginSubmit = (e) => {
         password: '123'
     }
 
-    if ((emailInput == hardcodedCred.email) && (passwordInput == hardcodedCred.password)) {
-        //combination is good. Log them in.
-        //this token can be anything. You can use random.org to generate a random string;
+    if ((emailInput === hardcodedCred.email) && (passwordInput === hardcodedCred.password)) {
         const token = '123456abcdef';
-        sessionStorage.setItem('auth-token', token);
-        //go to www.website.com/todo
+        window.localStorage.setItem('token', token);
         history.push('/Dashboard');
     } else {
-        //bad combination
-        alert('wrong email or password combination');
+        alert('Invalid email or password.');
     }
 }
-
  
   return (
+    <div className={classes.body}>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -128,8 +130,10 @@ const handleLoginSubmit = (e) => {
           >
               Sign In
           </Button>
+          
         </form>
       </div>
     </Container>
+    </div>
   );
 }

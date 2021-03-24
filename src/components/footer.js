@@ -44,7 +44,7 @@ const UseStyle = makeStyles((theme) => ({
             listStyle: 'none',
         },
         Footer:{
-            marginTop: '12%',
+            marginTop: '0',
             borderTop: `1px solid ${theme.palette.divider}`,
             paddingTop: '20px',
         }
